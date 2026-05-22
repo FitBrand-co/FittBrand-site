@@ -112,7 +112,7 @@ on conflict (slug) do update set
   active=true;
 
 
--- FitBrand v33 early access waitlist table
+-- FitBrand early access lead capture table (v35)
 create table if not exists public.early_access_leads (
   id uuid primary key default gen_random_uuid(),
   email text not null,
