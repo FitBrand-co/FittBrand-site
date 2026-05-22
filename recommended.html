@@ -192,8 +192,7 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="programs.html">Programs</a>
-    <a href="early-access.html">Early Access</a>
+    <a href="programs.html">Programs</a><a href="early-access.html">Early Access</a>
     <a href="recommended.html">Recommended Products</a>
     <a href="about.html">About us</a>
     <a href="policies.html">Policies</a>
@@ -301,9 +300,9 @@
             </div>
 
             <div class="meal-buy-row">
-              <div class="meal-price">Target launch price: €7.99 / month</div>
-              <a class="meal-black-btn" href="early-access.html?interest=mealplan">Join Early Access</a>
-              <button class="meal-white-btn" onclick="addToCart('mealplan')">Notify me</button>
+              <div class="meal-price">Target price: €7.99 / month</div>
+              <a class="meal-black-btn" href="early-access.html?product=mealplan">Join early access</a>
+              <button class="meal-white-btn" onclick="addToCart('mealplan')">Add to cart</button>
               <a class="meal-white-btn" href="#meal-ai-preview">Read more</a>
             </div>
           </div>
@@ -429,8 +428,8 @@
     <strong>Meal Plan Guide AI</strong>
     <span>Unlock the generator and create a personal 7-day meal plan.</span>
   </div>
-  <a href="early-access.html?interest=mealplan">Join Early Access</a>
-  <button onclick="addToCart('mealplan')">Notify me</button>
+  <a href="early-access.html?product=mealplan">Join early access</a>
+  <button onclick="addToCart('mealplan')">Add to cart</button>
 </div>
 
 <div id="drawer-overlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
@@ -473,11 +472,11 @@
 
 <script>
 const fitbrandProductData = {
-  aesthetic:{name:"Aesthetic Program Monthly",price:9.99},
-  shred:{name:"Shred Program Monthly",price:9.99},
-  strength:{name:"Strength Program Monthly",price:9.99},
-  bundle:{name:"Complete Bundle Monthly",price:24.99},
-  mealplan:{name:"Meal Plan Guide AI Monthly",price:7.99},
+  aesthetic:{name:"Aesthetic Program",price:9.99},
+  shred:{name:"Shred Program",price:9.99},
+  strength:{name:"Strength Program",price:9.99},
+  bundle:{name:"Complete Bundle",price:24.99},
+  mealplan:{name:"Meal Plan Guide AI",price:7.99},
   belt:{name:"Lifting Belt",price:24.99},
   straps:{name:"Lifting Straps",price:12.99}
 };
