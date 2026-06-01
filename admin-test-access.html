@@ -17,7 +17,7 @@
 
     <div class="fb-admin-test-kicker">Private testing page</div>
     <h1>Unlock all FitBrand programs for testing.</h1>
-    <p>This page is only for you/admin testing. It can unlock all digital programs and AI tools on this device, and it can also grant cloud access to an email if the user has logged in once.</p>
+    <p>This page is only for admin testing. Use it to unlock all digital programs and AI tools on your own browser without creating a real purchase. It does not change customer payments.</p>
 
     <div class="fb-admin-test-form">
       <label>Admin password</label>
@@ -25,16 +25,17 @@
 
       <label>Email to test with</label>
       <input id="adminEmail" type="email" placeholder="your@email.com">
-      <p class="fb-admin-test-small">Use the same email you use when logging in on FitBrand.</p>
+      <p class="fb-admin-test-small">Email is optional for local testing. Use it only if you want the test profile to show your email.</p>
 
       <div class="fb-admin-test-actions">
         <button id="unlockLocalBtn" type="button" class="btn-dark">Unlock all on this device</button>
-        <button id="grantCloudBtn" type="button" class="btn-outline">Grant cloud access</button>
+        <button id="grantCloudBtn" type="button" class="btn-outline">Optional: grant to email</button>
       </div>
       <button id="clearLocalBtn" type="button" class="fb-admin-test-clear">Clear local test access</button>
     </div>
 
     <div id="adminStatus" class="fb-admin-test-status" aria-live="polite"></div>
+    <div class="fb-admin-test-message"><strong>Important</strong>Local unlock is only for your current browser. If customer product buttons look like they open free access, click “Clear local test access” first and retest in incognito.</div>
 
     <div class="fb-admin-test-grid">
       <article><strong>Aesthetic Program</strong><span>Training generator access</span></article>
@@ -56,6 +57,7 @@
 <script src="fitbrand-config.js"></script>
 <script src="supabase-integration.js"></script>
 <script src="fitbrand-v41-admin-checkout-fix.js"></script>
+<script src="fitbrand-v42-admin-purchase-fix.js"></script>
 <script>
 (function(){
   const $ = id => document.getElementById(id);
@@ -66,43 +68,51 @@
     box.textContent = message || '';
     box.className = 'fb-admin-test-status ' + (type || '');
   }
-  async function callApi(action){
+  async function verifyPassword(){
     const password = $('adminPassword').value.trim();
-    const email = $('adminEmail').value.trim().toLowerCase();
-    if(!password){ setStatus('Enter your admin password first.', 'error'); return null; }
+    if(!password) throw new Error('Enter your admin password first.');
     const res = await fetch('/api/admin-grant-test-access', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-fitbrand-admin-password': password
-      },
-      body: JSON.stringify({ action, email, products })
+      headers: { 'Content-Type': 'application/json', 'x-fitbrand-admin-password': password },
+      body: JSON.stringify({ action: 'verify', products })
     });
     const data = await res.json().catch(()=>({}));
-    if(!res.ok) throw new Error(data.error || 'Admin request failed.');
+    if(!res.ok) throw new Error(data.error || 'Could not verify admin password. Check ADMIN_DASHBOARD_PASSWORD in Vercel and redeploy.');
+    return data;
+  }
+  async function grantCloud(){
+    const password = $('adminPassword').value.trim();
+    const email = $('adminEmail').value.trim().toLowerCase();
+    if(!password) throw new Error('Enter your admin password first.');
+    if(!validEmail(email)) throw new Error('Enter the email you want to grant cloud access to. That email must have logged in once on FitBrand first.');
+    const res = await fetch('/api/admin-grant-test-access', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-fitbrand-admin-password': password },
+      body: JSON.stringify({ action: 'grant_cloud', email, products })
+    });
+    const data = await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(data.error || 'Could not grant cloud access.');
     return data;
   }
   $('unlockLocalBtn').addEventListener('click', async () => {
     try{
-      setStatus('Checking admin password...', 'loading');
-      await callApi('verify');
+      setStatus('Verifying password...', 'loading');
+      await verifyPassword();
       window.FitBrandAdminTestAccess.unlockLocalTestAccess($('adminEmail').value.trim());
-      setStatus('All local test access is unlocked on this device. You can now open Programs, Meal AI and My Products.', 'success');
+      setStatus('Done. All programs and AI tools are unlocked on this browser only. Go test Programs or Meal AI now. A small admin banner will show on public pages so you remember test mode is active.', 'success');
     }catch(error){ setStatus(error.message, 'error'); }
   });
   $('grantCloudBtn').addEventListener('click', async () => {
-    const email = $('adminEmail').value.trim();
-    if(!validEmail(email)){ setStatus('Enter the email you want to grant cloud access to. It must have logged in once on FitBrand first.', 'error'); return; }
     try{
       setStatus('Granting cloud access...', 'loading');
-      const data = await callApi('grant_cloud');
-      window.FitBrandAdminTestAccess.unlockLocalTestAccess(email);
-      setStatus(data.message || 'Cloud access granted. Local access was also unlocked on this device.', 'success');
+      const data = await grantCloud();
+      window.FitBrandAdminTestAccess.unlockLocalTestAccess($('adminEmail').value.trim());
+      setStatus(data.message || 'Cloud access granted. Local access is also active on this browser.', 'success');
     }catch(error){ setStatus(error.message, 'error'); }
   });
   $('clearLocalBtn').addEventListener('click', () => {
     window.FitBrandAdminTestAccess.clearLocalTestAccess();
-    setStatus('Local test access cleared on this device.', 'success');
+    setStatus('Local test access cleared. Public product buttons will now behave like normal customer mode again.', 'success');
   });
 })();
 </script>

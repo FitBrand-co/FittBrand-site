@@ -1,0 +1,1 @@
+FitBrand v42 - fixes checkout logo, safe buy buttons, and admin local test access. Upload changed files to GitHub.
