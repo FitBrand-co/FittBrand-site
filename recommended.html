@@ -301,7 +301,7 @@
 
             <div class="meal-buy-row">
               <div class="meal-price">Target price: €7.99 / month</div>
-              <a class="meal-black-btn" href="purchase-access.html?product=mealplan">Request access</a>
+              <a class="meal-black-btn" href="purchase-access.html?product=mealplan">Get access</a>
               <button class="meal-white-btn" onclick="addToCart('mealplan')">Add to cart</button>
               <a class="meal-white-btn" href="#meal-ai-preview">Read more</a>
             </div>
@@ -428,7 +428,7 @@
     <strong>Meal Plan Guide AI</strong>
     <span>Unlock the generator and create a personal 7-day meal plan.</span>
   </div>
-  <a href="purchase-access.html?product=mealplan">Request access</a>
+  <a href="purchase-access.html?product=mealplan">Get access</a>
   <button onclick="addToCart('mealplan')">Add to cart</button>
 </div>
 
@@ -760,6 +760,8 @@ function downloadMealPlanPDF(){
         <pre>${latestMealPlanText.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</pre>
         <script>window.print();<\/script>
       <script src="fitbrand-conversion.js"></script>
+<script src="gumroad-config.js"></script>
+<script src="fitbrand-ai-payments-v37.js"></script>
 </body>
     </html>
   `);
@@ -830,6 +832,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 <script src="fitbrand-config.js"></script>
 <script src="supabase-integration.js"></script>
 <script src="fitbrand-conversion.js"></script>
+<script src="gumroad-config.js"></script>
+<script src="fitbrand-ai-payments-v37.js"></script>
 </body>
 </html>
 
