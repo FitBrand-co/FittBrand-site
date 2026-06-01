@@ -63,8 +63,9 @@
     const price = STARTER_PRICE();
     qs('a[href^="purchase-access.html"], a[href*="purchase-access.html"]').forEach(a=>{
       if(/admin/i.test(a.href)) return;
+      if(a.closest('.nav') || a.closest('.mobile-panel') || a.closest('.fb-purchase-mini-nav')) return;
       const text=(a.textContent||'').trim();
-      if(!/view access/i.test(text)) safeText(a, `Buy Starter Plan — ${price}`);
+      if(!/view access|details/i.test(text)) safeText(a, `Buy — ${price}`);
       a.classList.add('fb-primary-buy-btn');
       a.setAttribute('aria-label', `Buy FitBrand Starter Plan for ${price}`);
     });

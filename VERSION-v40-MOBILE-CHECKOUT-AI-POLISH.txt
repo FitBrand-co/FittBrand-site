@@ -1,0 +1,1 @@
+v40: fixed nav black button, compact prices, cleaner purchase page/back button, mobile layout, AI/meal generator guidance cards, and button spacing.

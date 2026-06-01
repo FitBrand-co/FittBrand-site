@@ -2492,3 +2492,65 @@ button,a{touch-action:manipulation;}
   .fb-v39-mobile-sticky-buy span{font-size:12px;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.08em;font-weight:900;}
   .fb-v39-mobile-sticky-buy strong{font-size:14px;text-transform:uppercase;letter-spacing:.06em;}
 }
+
+
+/* ===== FitBrand v40: mobile polish, compact prices, nav fix, AI/proof UX ===== */
+.nav nav a.fb-primary-buy-btn,.nav nav a.fb-secondary-buy-btn,.nav nav a[href*="purchase-access"]{
+  background:transparent!important;color:#111!important;border:0!important;box-shadow:none!important;min-height:auto!important;width:auto!important;padding:0!important;border-radius:0!important;
+}
+.nav nav a.fb-nav-buy-link{position:relative;color:#111!important;}
+.nav nav a.fb-nav-buy-link::after{content:'$4.99';margin-left:6px;font-size:10px;color:rgba(0,0,0,.55);font-weight:900;}
+.fb-compact-price{display:inline-flex!important;align-items:center!important;gap:10px!important;flex-wrap:wrap!important;background:#f4f4f4!important;border:1px solid rgba(0,0,0,.08)!important;border-radius:18px!important;padding:12px 14px!important;margin:16px 0!important;font-size:initial!important;letter-spacing:normal!important;line-height:1!important;color:#111!important;width:auto!important;max-width:100%!important;}
+.fb-compact-price strong{font-size:clamp(28px,4.8vw,44px)!important;letter-spacing:-.06em!important;line-height:1!important;color:#050505!important;}
+.fb-compact-price span{font-size:13px!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:950!important;color:rgba(0,0,0,.62)!important;line-height:1.2!important;}
+.fb-compact-price small{width:100%!important;margin:2px 0 0!important;color:rgba(0,0,0,.54)!important;font-size:11px!important;}
+.program-cart-actions,.bundle-actions,.meal-buy-row{max-width:520px!important;}
+.program-cart-actions .btn-dark,.program-cart-actions .btn-outline,.bundle-actions a,.meal-buy-row a{white-space:normal!important;min-width:0!important;}
+.fb-v40-purchase-nav{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;padding:14px clamp(14px,4vw,42px)!important;}
+.fb-purchase-nav-links{display:flex;gap:10px;align-items:center;}
+.fb-purchase-nav-links a,.fb-purchase-nav-links button{height:46px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;padding:0 14px;font-weight:900;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;}
+.fb-v40-safe-note{margin-top:16px!important;color:rgba(255,255,255,.68)!important;font-size:14px!important;}
+.fb-v40-preview-panel{margin-top:22px;border-radius:30px;background:#fff;color:#111;padding:28px;display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;border:1px solid rgba(0,0,0,.08);box-shadow:0 24px 70px rgba(0,0,0,.18);}
+.fb-v40-preview-copy span{display:inline-flex;border-radius:999px;background:#111;color:#fff;padding:8px 12px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;}
+.fb-v40-preview-copy h2{font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-.06em;text-transform:uppercase;margin:16px 0 10px;}
+.fb-v40-preview-copy p,.fb-v40-preview-grid p{color:rgba(0,0,0,.62);line-height:1.55;margin:0;}
+.fb-v40-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.fb-v40-preview-grid article{border-radius:22px;background:#f6f6f6;border:1px solid rgba(0,0,0,.07);padding:16px;}
+.fb-v40-preview-grid strong{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:#111;color:#fff;margin-bottom:12px;}
+.fb-v40-preview-grid h3{font-size:20px;margin:0 0 8px;letter-spacing:-.03em;}
+.fb-v40-ai-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 22px;}
+.fb-v40-ai-proof article,.fb-v40-training-proof{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);border-radius:20px;padding:16px;color:#fff;}
+.fb-v40-ai-proof strong,.fb-v40-training-proof strong{display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em;font-size:12px;}
+.fb-v40-ai-proof span,.fb-v40-training-proof span{color:rgba(255,255,255,.72);line-height:1.45;font-size:14px;}
+.fb-v40-training-proof{margin-bottom:14px;}
+#meal-plan-ai .meal-field label{font-size:16px!important;letter-spacing:.02em!important;text-transform:uppercase!important;}
+#meal-plan-ai .meal-field input,#meal-plan-ai .meal-field select{height:58px!important;border-radius:16px!important;font-size:16px!important;}
+#meal-plan-ai .meal-generate-btn{min-height:60px!important;border-radius:18px!important;}
+.fb-ai-step h4,.fb-meal-step h4{font-size:clamp(25px,5vw,36px)!important;line-height:1!important;}
+.fb-choice-grid button,.fb-meal-options button{min-height:96px!important;border-radius:18px!important;}
+.fb-ea-hero h1{font-size:clamp(44px,8vw,82px)!important;line-height:.92!important;}
+@media(max-width:900px){
+  .fb-v40-preview-panel{grid-template-columns:1fr;padding:18px;border-radius:24px;}
+  .fb-v40-preview-grid,.fb-v40-ai-proof{grid-template-columns:1fr;}
+}
+@media(max-width:760px){
+  .nav nav a[href*="purchase-access"]{display:none!important;}
+  .fb-compact-price{display:grid!important;grid-template-columns:auto 1fr!important;gap:8px 10px!important;width:100%!important;padding:14px!important;border-radius:18px!important;}
+  .fb-compact-price strong{font-size:38px!important;}
+  .fb-compact-price span{font-size:12px!important;}
+  .program-cart-actions,.bundle-actions,.meal-buy-row{max-width:none!important;grid-template-columns:1fr!important;}
+  .program-cart-actions .btn-dark,.program-cart-actions .btn-outline,.bundle-actions a,.meal-buy-row a{min-height:58px!important;font-size:13px!important;letter-spacing:.055em!important;}
+  .hero-content h1,.fb-purchase-hero h1,.fb-ea-hero h1{font-size:clamp(38px,11vw,58px)!important;line-height:.92!important;letter-spacing:-.06em!important;}
+  .fb-purchase-nav-links a{display:none;}
+  .fb-purchase-nav-links button{height:44px;padding:0 12px;}
+  .fb-v40-purchase-nav .brand-word{font-size:18px!important;letter-spacing:.16em!important;}
+  .fb-v40-preview-copy h2{font-size:38px;}
+  .fb-v40-preview-grid article{padding:15px;border-radius:18px;}
+  #meal-plan-ai .meal-ai-lock-head h2{font-size:clamp(34px,10vw,50px)!important;}
+  #meal-plan-ai .meal-ai-lock-head p{font-size:15px!important;}
+  #meal-plan-ai .meal-grid{grid-template-columns:1fr!important;gap:14px!important;}
+  #meal-plan-ai .meal-field.wide{grid-column:span 1!important;}
+  .fb-choice-grid,.fb-meal-options{grid-template-columns:1fr!important;gap:10px!important;}
+  .fb-choice-grid button,.fb-meal-options button{min-height:78px!important;padding:14px!important;}
+  .fb-ai-profile-card,.fb-meal-profile-summary{grid-template-columns:1fr!important;}
+}
