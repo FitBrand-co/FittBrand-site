@@ -2383,3 +2383,112 @@ body.fb-is-logged-out #profileLoginBtn,body.fb-is-logged-out .profile-menu [data
 
 /* ===== FitBrand v37 Gumroad + evidence AI polish ===== */
 .fb-payment-card-v37{max-width:980px;margin:28px auto;padding:30px;border-radius:30px;background:linear-gradient(145deg,#090909,#18191d);color:#fff;border:1px solid rgba(255,255,255,.14);box-shadow:0 28px 80px rgba(0,0,0,.22);display:grid;gap:14px;text-align:left}.fb-payment-card-v37 h2{font-size:clamp(32px,6vw,58px);line-height:.96;margin:0;letter-spacing:-.05em}.fb-payment-card-v37 p{color:rgba(255,255,255,.74);line-height:1.65;margin:0;max-width:760px}.fb-payment-badge-v37{width:max-content;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);padding:9px 12px;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.1em}.fb-gumroad-main-btn,.fb-gumroad-buy{min-height:58px;border:0;border-radius:18px;background:#fff;color:#080808;font-weight:1000;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;padding:0 22px;width:max-content;box-shadow:0 18px 44px rgba(0,0,0,.25)}.fb-payment-proof-v37{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}.fb-payment-proof-v37 span{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:16px;padding:12px;font-weight:800;color:#f0f0f0}.fb-payment-note-v37{font-size:13px!important;color:rgba(255,255,255,.58)!important}.fb-v37-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(22px);opacity:0;pointer-events:none;z-index:50000;width:min(520px,calc(100vw - 24px));padding:16px 18px;border-radius:20px;background:rgba(10,10,10,.94);color:#fff;box-shadow:0 24px 70px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.14);transition:.24s ease;display:grid;gap:4px}.fb-v37-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.fb-v37-toast strong{font-size:16px}.fb-v37-toast span{font-size:14px;color:rgba(255,255,255,.72);line-height:1.45}.fb-v37-toast.error{background:#1c1111;border-color:rgba(255,90,90,.35)}.fb-v37-source-card{grid-column:1/-1;border-radius:22px;background:linear-gradient(145deg,#f7f7f7,#fff);border:1px solid rgba(0,0,0,.08);padding:18px;color:#111}.fb-v37-source-card strong{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}.fb-v37-source-card ul{margin:0;padding-left:18px}.fb-v37-source-card li{margin:6px 0;line-height:1.5;color:rgba(0,0,0,.72)}.fb-v37-evidence-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.fb-v37-evidence-strip span{border-radius:999px;padding:10px 12px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#fff;font-weight:850;font-size:12px;text-transform:uppercase;letter-spacing:.06em}@media(max-width:760px){.fb-payment-card-v37{margin:20px 0;padding:22px;border-radius:24px}.fb-gumroad-main-btn,.fb-gumroad-buy{width:100%;min-height:56px}.fb-payment-proof-v37{grid-template-columns:1fr}.fb-v37-evidence-strip{gap:7px}.fb-v37-evidence-strip span{font-size:11px;padding:9px 10px}.fb-plan-days,.meal-week-meals,.macro-grid,.meal-days{grid-template-columns:1fr!important}.fb-v37-source-card{border-radius:18px;padding:15px}.meal-notes ul{padding-left:18px}}
+
+
+/* ===== FitBrand v38 price/button/cookie/policy polish ===== */
+.fb-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:99999;padding:14px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55));}
+.fb-cookie-card{width:min(980px,calc(100vw - 24px));margin:0 auto;background:rgba(12,12,12,.96);color:#fff;border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 80px rgba(0,0,0,.42);border-radius:22px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(18px)}
+.fb-cookie-copy strong{display:block;font-size:18px;margin-bottom:4px}.fb-cookie-copy p{margin:0;color:rgba(255,255,255,.72);font-size:14px;line-height:1.5;max-width:650px}.fb-cookie-actions{display:flex;gap:10px;flex-shrink:0}.fb-cookie-actions button{height:48px;border-radius:14px;padding:0 16px;font-weight:950;text-transform:uppercase;letter-spacing:.04em;cursor:pointer}.fb-cookie-primary{background:#fff;color:#080808;border:0}.fb-cookie-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.26)}
+.fb-universal-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);z-index:100000;width:min(520px,calc(100vw - 24px));background:#0b0b0b;color:#fff;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 80px rgba(0,0,0,.32);border-radius:20px;padding:15px 17px;opacity:0;pointer-events:none;transition:.22s ease;display:grid;gap:4px}.fb-universal-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.fb-universal-toast strong{font-size:16px}.fb-universal-toast span{color:rgba(255,255,255,.72);font-size:14px;line-height:1.45}.fb-universal-toast.error{background:#211111;border-color:rgba(255,88,88,.35)}
+.fb-primary-buy-btn,.fb-secondary-buy-btn{border-radius:16px!important;font-weight:1000!important;letter-spacing:.06em!important;text-transform:uppercase!important}.fb-primary-buy-btn{background:#050505!important;color:#fff!important}.fb-secondary-buy-btn{background:#fff!important;color:#111!important;border:1px solid rgba(0,0,0,.18)!important}.fb-old-price{display:none!important}.price small{display:block!important;margin-top:6px!important;color:rgba(0,0,0,.55)!important;text-transform:uppercase!important;font-size:11px!important;letter-spacing:.08em!important}.program-cart-actions{gap:10px!important}.program-cart-actions .btn-outline{opacity:.95!important}
+.fb-v38-buy-hero h1{max-width:850px}.fb-v38-buy-card{background:#fff;color:#111;border-radius:30px;padding:26px;display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:stretch;box-shadow:0 28px 90px rgba(0,0,0,.24)}.fb-v38-pill{display:inline-flex;width:max-content;background:#f2f2f2;border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:8px 11px;font-weight:950;text-transform:uppercase;font-size:12px;letter-spacing:.08em}.fb-v38-buy-card h2{font-size:clamp(34px,6vw,58px);letter-spacing:-.06em;line-height:.94;margin:16px 0 12px;text-transform:uppercase}.fb-v38-buy-card p{color:rgba(0,0,0,.62);line-height:1.6}.fb-v38-checklist{display:grid;gap:9px;margin:18px 0 0;padding:0;list-style:none}.fb-v38-checklist li{font-weight:850}.fb-v38-checklist li:before{content:'✓';display:inline-flex;margin-right:8px}.fb-v38-price-box{border-radius:24px;background:linear-gradient(180deg,#0b0b0b,#171717);color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:10px}.fb-v38-price-box strong{font-size:54px;line-height:1;letter-spacing:-.06em}.fb-v38-price-box span{text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:rgba(255,255,255,.7);font-size:12px}.fb-v38-price-box .fb-gumroad-main-btn{width:100%;margin-top:10px}.fb-v38-price-box p{color:rgba(255,255,255,.62);font-size:13px;margin:0}.fb-v38-policies .policy-layout{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.policy-toc{position:sticky;top:96px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:22px;padding:18px;display:grid;gap:8px}.policy-toc h3{margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em}.policy-toc a{color:#111;text-decoration:none;border-radius:12px;padding:9px 10px;background:#f5f5f5;font-weight:800;font-size:13px}.policy-content{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:26px;padding:28px;color:#111}.policy-content section{padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)}.policy-content section:last-child{border-bottom:0}.policy-content h2{font-size:28px;letter-spacing:-.03em;margin:0 0 10px}.policy-content p{line-height:1.7;color:rgba(0,0,0,.70)}.policy-alert{background:#fff7df;border:1px solid #f2d27a;border-radius:18px;padding:16px!important;color:#4d3900!important}.policy-date{font-weight:900;color:#111!important}
+@media(max-width:760px){.fb-cookie-card{display:grid;padding:16px;border-radius:20px}.fb-cookie-actions{display:grid;grid-template-columns:1fr;}.fb-cookie-actions button{width:100%}.fb-v38-buy-card{grid-template-columns:1fr;border-radius:24px;padding:18px}.fb-v38-price-box{border-radius:20px}.fb-v38-price-box strong{font-size:48px}.fb-v38-policies .policy-layout{grid-template-columns:1fr}.policy-toc{position:relative;top:auto}.policy-content{padding:18px;border-radius:22px}.policy-content h2{font-size:24px}.fb-universal-toast{bottom:86px}}
+
+/* ===== FitBrand v39 mobile-first conversion / button safety polish ===== */
+html, body{max-width:100%;overflow-x:hidden;}
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+button,a{touch-action:manipulation;}
+.fb-primary-buy-btn,.fb-secondary-buy-btn,.btn-dark,.btn-silver,.btn-outline,.meal-black-btn,.meal-white-btn,.fb-gumroad-main-btn{
+  min-height:52px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1.15!important;
+  white-space:normal!important;
+  word-break:normal!important;
+}
+.program-cart-actions,.bundle-actions,.meal-buy-row,.fb-v39-actions-safe{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+  align-items:stretch!important;
+}
+.program-cart-actions > *, .bundle-actions > *, .meal-buy-row > *{width:100%!important;margin:0!important;}
+.price,.meal-price{line-height:1.05!important;letter-spacing:-.03em!important;}
+.price small{font-size:11px!important;letter-spacing:.08em!important;color:rgba(0,0,0,.58)!important;display:block!important;margin-top:8px!important;}
+
+/* show cookie again on v39 and keep it readable */
+.fb-cookie-card a{color:#fff;text-decoration:underline;font-weight:850;}
+.fb-cookie-actions button{min-width:170px;}
+
+/* purchase page premium spacing */
+.fb-purchase-mini-nav{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.10);}
+.fb-purchase-hero h1,.fb-v38-buy-card h2{text-wrap:balance;}
+.fb-v38-buy-card{overflow:hidden;}
+.fb-v38-price-box .fb-gumroad-main-btn{min-height:60px!important;border-radius:18px!important;}
+
+/* mobile sticky buy bar */
+.fb-v39-mobile-sticky-buy{display:none;}
+@media(max-width:760px){
+  body{font-size:16px;}
+  .nav{height:auto!important;min-height:74px!important;padding:10px 12px!important;gap:8px!important;}
+  .brand-word{font-size:clamp(18px,5vw,28px)!important;letter-spacing:.18em!important;}
+  .logo-img{width:52px!important;height:52px!important;object-fit:contain!important;}
+  .nav-actions{gap:8px!important;}
+  .cart-icon-btn,.profile-icon-btn,.mobile-menu-toggle{width:50px!important;height:50px!important;min-width:50px!important;border-radius:16px!important;}
+  .mobile-menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;}
+  .profile-menu{position:fixed!important;top:82px!important;left:12px!important;right:12px!important;width:auto!important;border-radius:24px!important;padding:18px!important;}
+  .profile-menu button,.profile-menu a{min-height:52px!important;display:flex!important;align-items:center!important;}
+
+  .hero,.photo-programs,.small-hero{min-height:auto!important;padding:84px 16px 54px!important;}
+  .hero-content h1,.fb-purchase-hero h1,.fb-ea-hero h1{font-size:clamp(42px,13vw,68px)!important;line-height:.90!important;letter-spacing:-.07em!important;text-wrap:balance!important;}
+  .hero-content p,.fb-purchase-hero p,.fb-ea-subtitle{font-size:16px!important;line-height:1.5!important;max-width:100%!important;}
+
+  .section{padding:48px 14px!important;}
+  .section-head h2,.fb-subscription-intro h2{font-size:clamp(34px,11vw,54px)!important;line-height:.94!important;text-wrap:balance!important;}
+  .section-head p,.fb-subscription-intro p{font-size:15px!important;line-height:1.5!important;}
+
+  .program-row,.program-row.reverse,.bundle-upgrade-card{display:grid!important;grid-template-columns:1fr!important;gap:18px!important;border-radius:26px!important;padding:16px!important;}
+  .program-img,.program-photo,.product-visual{min-height:260px!important;border-radius:22px!important;}
+  .program-text,.bundle-content{padding:4px!important;}
+  .program-text h2,.bundle-content h2{font-size:clamp(34px,11vw,50px)!important;line-height:.94!important;letter-spacing:-.06em!important;}
+  .program-text p,.bundle-content p{font-size:15px!important;line-height:1.55!important;}
+  .benefits,.bundle-features,.programs-premium-strip,.trust-row{grid-template-columns:1fr!important;gap:12px!important;}
+  .price,.meal-price{font-size:32px!important;margin:18px 0!important;}
+  .program-cart-actions,.bundle-actions,.meal-buy-row,.fb-v39-actions-safe{grid-template-columns:1fr!important;gap:10px!important;}
+  .program-cart-actions > *, .bundle-actions > *, .meal-buy-row > *{min-height:58px!important;border-radius:18px!important;font-size:14px!important;padding:0 16px!important;}
+  .btn-outline{background:#fff!important;color:#111!important;border:1px solid rgba(0,0,0,.14)!important;}
+
+  .fb-purchase-page{padding:16px 12px 110px!important;}
+  .fb-purchase-mini-nav{padding:10px 12px!important;min-height:72px!important;}
+  .fb-purchase-mini-nav > a:not(.brand){min-height:44px!important;border-radius:14px!important;padding:0 12px!important;background:rgba(255,255,255,.08)!important;color:#fff!important;text-decoration:none!important;font-weight:900!important;}
+  .fb-purchase-hero,.fb-v38-buy-card,.fb-purchase-warning,.fb-purchase-steps article{border-radius:24px!important;padding:18px!important;}
+  .fb-purchase-proof{grid-template-columns:1fr!important;gap:8px!important;}
+  .fb-v38-buy-card{grid-template-columns:1fr!important;gap:16px!important;}
+  .fb-v38-buy-card h2{font-size:clamp(36px,12vw,54px)!important;}
+  .fb-v38-price-box strong{font-size:56px!important;}
+  .fb-v38-price-box .fb-gumroad-main-btn{min-height:64px!important;width:100%!important;}
+  .fb-purchase-steps{grid-template-columns:1fr!important;gap:12px!important;}
+
+  .fb-ea-page{padding-bottom:96px!important;}
+  .fb-ea-hero{padding:24px 14px 36px!important;min-height:auto!important;}
+  .fb-ea-card{padding:16px!important;border-radius:24px!important;box-shadow:0 22px 70px rgba(0,0,0,.24)!important;}
+  .fb-ea-card input{height:58px!important;font-size:16px!important;border-radius:16px!important;}
+  .fb-ea-goals{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;}
+  .fb-ea-goals button{min-height:50px!important;border-radius:14px!important;font-size:13px!important;}
+  .fb-ea-submit{min-height:62px!important;border-radius:18px!important;font-size:14px!important;}
+  .fb-ea-sticky{left:12px!important;right:12px!important;bottom:12px!important;width:auto!important;min-height:60px!important;border-radius:20px!important;}
+  .fb-ea-benefits,.fb-ea-grid{grid-template-columns:1fr!important;gap:10px!important;}
+
+  .fb-cookie-banner{padding:10px 10px calc(10px + env(safe-area-inset-bottom))!important;}
+  .fb-cookie-card{width:100%!important;border-radius:20px!important;padding:15px!important;gap:12px!important;}
+  .fb-cookie-copy strong{font-size:16px!important;}.fb-cookie-copy p{font-size:13px!important;line-height:1.45!important;}
+  .fb-cookie-actions{grid-template-columns:1fr!important;width:100%!important;}.fb-cookie-actions button{width:100%!important;min-width:0!important;min-height:50px!important;}
+  .fb-universal-toast{bottom:88px!important;border-radius:18px!important;width:calc(100vw - 22px)!important;}
+
+  .fb-v39-mobile-sticky-buy{position:fixed;z-index:9800;left:12px;right:12px;bottom:12px;min-height:62px;border-radius:20px;background:rgba(10,10,10,.94);color:#fff;text-decoration:none;box-shadow:0 20px 70px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:1fr auto;align-items:center;padding:10px 14px;transform:translateY(130%);transition:.24s ease;backdrop-filter:blur(14px);}
+  .fb-v39-mobile-sticky-buy.show{transform:translateY(0);}
+  .fb-v39-mobile-sticky-buy span{font-size:12px;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.08em;font-weight:900;}
+  .fb-v39-mobile-sticky-buy strong{font-size:14px;text-transform:uppercase;letter-spacing:.06em;}
+}

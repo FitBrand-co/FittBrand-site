@@ -3,11 +3,11 @@
   'use strict';
 
   const PRODUCTS = {
-    aesthetic:{name:'Aesthetic Program',price:'€9.99 / month',desc:'Workout structure for building a more aesthetic physique.'},
-    shred:{name:'Shred Program',price:'€9.99 / month',desc:'Training structure for losing fat and staying consistent.'},
-    strength:{name:'Strength Program',price:'€9.99 / month',desc:'Strength-focused training with clear progression.'},
-    mealplan:{name:'Meal Plan Guide AI',price:'€7.99 / month',desc:'Meal guidance and simple structure for your goal.'},
-    bundle:{name:'Complete Bundle + Meal Plan AI',price:'€24.99 / month',desc:'All FitBrand programs plus Meal Plan Guide AI access.'}
+    aesthetic:{name:'Aesthetic Program',price:'$4.99 one-time',desc:'Workout structure for building a more aesthetic physique.'},
+    shred:{name:'Shred Program',price:'$4.99 one-time',desc:'Training structure for losing fat and staying consistent.'},
+    strength:{name:'Strength Program',price:'$4.99 one-time',desc:'Strength-focused training with clear progression.'},
+    mealplan:{name:'Meal Plan Guide AI',price:'$4.99 one-time',desc:'Meal guidance and simple structure for your goal.'},
+    bundle:{name:'Complete Bundle + Meal Plan AI',price:'$4.99 one-time',desc:'All FitBrand programs plus Meal Plan Guide AI access.'}
   };
 
   const $ = id => document.getElementById(id);

@@ -1,0 +1,22 @@
+FitBrand v39 mobile conversion + button/cookie/policy polish
+
+Changed:
+- Reworked price/button alignment around one paid test offer: FitBrand Starter Plan — $4.99 one-time.
+- Removed old subscription/monthly wording from visible product flows.
+- Improved mobile button spacing so CTA buttons stack cleanly and do not get squeezed together.
+- Added mobile sticky buy CTA on key pages after scroll.
+- Improved mobile purchase page, programs cards, early-access form and cookie banner spacing.
+- Cookie banner uses a new consent key so it appears again after upload.
+- Cookie banner includes Necessary only / Accept analytics and a link to cookie policy.
+- Policies strengthened with beta phase, business risk, customer responsibility and clearer limitations.
+- Patched old JS price-cleaning logic so it no longer reverts prices to monthly pricing.
+- Patched locked product access CTA to route to purchase-access instead of checkout.
+
+Checked:
+- JavaScript syntax checked for fitbrand.js, fitbrand-sales-polish-v38.js, fitbrand-cookie-consent.js, fitbrand-ai-payments-v37.js, fitbrand-purchase.js and supabase-integration.js.
+- HTML local asset/link check: 0 missing local refs.
+- Search check: no visible old monthly subscription strings in HTML/JS.
+
+Notes:
+- Add your real Gumroad product link inside gumroad-config.js.
+- No policy text can guarantee zero legal risk. Have a jurist review before scaling paid sales.

@@ -649,12 +649,11 @@
     return (u && u.email && (u.backend==='supabase' || u.supabaseId)) ? u : null;
   };
   function cleanPriceText(){
+    // v39: only remove duplicated suffixes. Do not force old monthly pricing back onto the new one-time Gumroad offer.
     qs('.price,.product-price,.meal-price,.drawer-item strong,.cart-total span,.summary-row span,.order-card strong').forEach(el=>{
       let t=el.textContent||'';
       t=t.replace(/(\/\s*mo){2,}/gi,'/mo').replace(/(\/\s*month)(\s*\/\s*month)+/gi,' / month');
-      t=t.replace(/€(?:4\.99|6\.99)\s*\/\s*mo/gi,'€9.99 / month');
-      t=t.replace(/€(?:4\.99|6\.99)\s*\/\s*month/gi,'€9.99 / month');
-      t=t.replace(/€(?:4\.99|6\.99)(?![0-9])/g,'€9.99 / month');
+      t=t.replace(/Target price:\s*\$4\.99\s*one-time/gi,'Starter access: $4.99 one-time');
       if(t!==el.textContent) el.textContent=t;
     });
   }
