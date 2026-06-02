@@ -1,0 +1,6 @@
+FitBrand v47 — Admin direct test + button/price fix
+- Admin test page is separate and does not require customer signup.
+- Admin test creates a local fake user only when TEST access is enabled.
+- Test buttons unlock access first, then open the real tools.
+- Public buy buttons stay purchase/Gumroad-first.
+- Program buttons/prices are polished for desktop/mobile.
