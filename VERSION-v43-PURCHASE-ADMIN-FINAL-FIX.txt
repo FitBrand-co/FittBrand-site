@@ -1,0 +1,8 @@
+FitBrand v43 purchase/admin final fix
+- Buy buttons now route to purchase-access.html instead of free access / early access.
+- purchase-access page is Gumroad-first with $4.99 one-time Starter Plan.
+- admin-test-access.html is rebuilt as a clear private testing panel.
+- Admin test access is local-only and includes a clear-test-access button/bar.
+- checkout/purchase logo is forced to return to index.html.
+- Mobile button stacking and purchase layout polished.
+- Validation: JS syntax OK, local HTML refs OK.

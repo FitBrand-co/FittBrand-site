@@ -3,118 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Admin Test Access | FitBrand</title>
+<title>FitBrand Admin Test Access</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="fb-admin-test-body">
-<main class="fb-admin-test-shell">
-  <section class="fb-admin-test-card">
-    <a class="fb-admin-test-brand" href="index.html" aria-label="Go to FitBrand home">
-      <img src="assets/fitbrand-logo-real.png" alt="FitBrand logo">
-      <span>FITBRAND</span>
-    </a>
-
-    <div class="fb-admin-test-kicker">Private testing page</div>
-    <h1>Unlock all FitBrand programs for testing.</h1>
-    <p>This page is only for admin testing. Use it to unlock all digital programs and AI tools on your own browser without creating a real purchase. It does not change customer payments.</p>
-
-    <div class="fb-admin-test-form">
-      <label>Admin password</label>
-      <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Password from Vercel">
-
-      <label>Email to test with</label>
-      <input id="adminEmail" type="email" placeholder="your@email.com">
-      <p class="fb-admin-test-small">Email is optional for local testing. Use it only if you want the test profile to show your email.</p>
-
-      <div class="fb-admin-test-actions">
-        <button id="unlockLocalBtn" type="button" class="btn-dark">Unlock all on this device</button>
-        <button id="grantCloudBtn" type="button" class="btn-outline">Optional: grant to email</button>
-      </div>
-      <button id="clearLocalBtn" type="button" class="fb-admin-test-clear">Clear local test access</button>
-    </div>
-
-    <div id="adminStatus" class="fb-admin-test-status" aria-live="polite"></div>
-    <div class="fb-admin-test-message"><strong>Important</strong>Local unlock is only for your current browser. If customer product buttons look like they open free access, click “Clear local test access” first and retest in incognito.</div>
-
-    <div class="fb-admin-test-grid">
-      <article><strong>Aesthetic Program</strong><span>Training generator access</span></article>
-      <article><strong>Shred Program</strong><span>Fat-loss structure access</span></article>
-      <article><strong>Strength Program</strong><span>Strength structure access</span></article>
-      <article><strong>Meal Plan Guide AI</strong><span>Meal builder access</span></article>
-      <article><strong>Complete Bundle</strong><span>Everything unlocked</span></article>
-    </div>
-
-    <div class="fb-admin-test-links">
-      <a href="programs.html">Test programs</a>
-      <a href="recommended.html#meal-plan-ai">Test Meal AI</a>
-      <a href="products-access.html">View access page</a>
-      <a href="index.html">Back home</a>
-    </div>
-  </section>
-</main>
-
+<body>
 <script src="fitbrand-config.js"></script>
-<script src="supabase-integration.js"></script>
-<script src="fitbrand-v41-admin-checkout-fix.js"></script>
-<script src="fitbrand-v42-admin-purchase-fix.js"></script>
-<script>
-(function(){
-  const $ = id => document.getElementById(id);
-  const products = ['aesthetic','shred','strength','bundle','mealplan'];
-  function validEmail(email){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || '').trim()); }
-  function setStatus(message, type){
-    const box = $('adminStatus');
-    box.textContent = message || '';
-    box.className = 'fb-admin-test-status ' + (type || '');
-  }
-  async function verifyPassword(){
-    const password = $('adminPassword').value.trim();
-    if(!password) throw new Error('Enter your admin password first.');
-    const res = await fetch('/api/admin-grant-test-access', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-fitbrand-admin-password': password },
-      body: JSON.stringify({ action: 'verify', products })
-    });
-    const data = await res.json().catch(()=>({}));
-    if(!res.ok) throw new Error(data.error || 'Could not verify admin password. Check ADMIN_DASHBOARD_PASSWORD in Vercel and redeploy.');
-    return data;
-  }
-  async function grantCloud(){
-    const password = $('adminPassword').value.trim();
-    const email = $('adminEmail').value.trim().toLowerCase();
-    if(!password) throw new Error('Enter your admin password first.');
-    if(!validEmail(email)) throw new Error('Enter the email you want to grant cloud access to. That email must have logged in once on FitBrand first.');
-    const res = await fetch('/api/admin-grant-test-access', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-fitbrand-admin-password': password },
-      body: JSON.stringify({ action: 'grant_cloud', email, products })
-    });
-    const data = await res.json().catch(()=>({}));
-    if(!res.ok) throw new Error(data.error || 'Could not grant cloud access.');
-    return data;
-  }
-  $('unlockLocalBtn').addEventListener('click', async () => {
-    try{
-      setStatus('Verifying password...', 'loading');
-      await verifyPassword();
-      window.FitBrandAdminTestAccess.unlockLocalTestAccess($('adminEmail').value.trim());
-      setStatus('Done. All programs and AI tools are unlocked on this browser only. Go test Programs or Meal AI now. A small admin banner will show on public pages so you remember test mode is active.', 'success');
-    }catch(error){ setStatus(error.message, 'error'); }
-  });
-  $('grantCloudBtn').addEventListener('click', async () => {
-    try{
-      setStatus('Granting cloud access...', 'loading');
-      const data = await grantCloud();
-      window.FitBrandAdminTestAccess.unlockLocalTestAccess($('adminEmail').value.trim());
-      setStatus(data.message || 'Cloud access granted. Local access is also active on this browser.', 'success');
-    }catch(error){ setStatus(error.message, 'error'); }
-  });
-  $('clearLocalBtn').addEventListener('click', () => {
-    window.FitBrandAdminTestAccess.clearLocalTestAccess();
-    setStatus('Local test access cleared. Public product buttons will now behave like normal customer mode again.', 'success');
-  });
-})();
-</script>
+<script src="gumroad-config.js"></script>
+<script src="fitbrand-v43-final-fix.js"></script>
 </body>
 </html>

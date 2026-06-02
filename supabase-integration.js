@@ -303,7 +303,7 @@
       const slugs = ['aesthetic','shred','strength','bundle','mealplan','shaker','belt','straps'];
       grid.innerHTML = slugs.map(slug => {
         const has = owned.has(slug);
-        return `<article class="access-card ${has ? 'owned' : ''}"><div><span>${has ? 'Unlocked' : 'Locked'}</span><h3>${esc(PRODUCTS[slug] || slug)}</h3><p>${has ? 'Saved in your FitBrand cloud account.' : 'Buy the Starter Plan to unlock digital access.'}</p></div><a class="${has ? 'btn-dark' : 'btn-outline'}" href="${has ? (slug === 'mealplan' ? 'recommended.html#meal-plan-ai' : slug === 'shaker' ? 'product-shaker.html' : slug === 'belt' ? 'product-belt.html' : slug === 'straps' ? 'product-straps.html' : 'index.html?purchased=' + slug) : 'purchase-access.html?product=' + slug}">${has ? 'Open' : 'Buy Starter Plan'}</a></article>`;
+        return `<article class="access-card ${has ? 'owned' : ''}"><div><span>${has ? 'Unlocked' : 'Locked'}</span><h3>${esc(PRODUCTS[slug] || slug)}</h3><p>${has ? 'Saved in your FitBrand cloud account.' : 'Buy the Starter Plan to unlock this product.'}</p></div><a class="${has ? 'btn-dark' : 'btn-outline'}" href="${has ? (slug === 'mealplan' ? 'recommended.html#meal-plan-ai' : slug === 'shaker' ? 'product-shaker.html' : slug === 'belt' ? 'product-belt.html' : slug === 'straps' ? 'product-straps.html' : 'index.html?purchased=' + slug) : 'checkout.html?product=' + slug}">${has ? 'Open' : 'Buy — $4.99'}</a></article>`;
       }).join('');
     }
 

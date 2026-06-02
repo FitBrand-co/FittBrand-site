@@ -53,7 +53,7 @@
       price_label: PRODUCTS[product].price,
       payment_reference: $('manualPaymentRef')?.value.trim() || '',
       notes: $('manualNotes')?.value.trim() || '',
-      source_page: 'purchase-access-v36'
+      source_page: 'purchase-access-v43'
     };
 
     const oldText = btn?.textContent;
@@ -73,7 +73,7 @@
       console.error(err);
       showMessage('error', err.message || 'Could not send request. Please try again.');
     }finally{
-      if(btn){ btn.disabled = false; btn.textContent = oldText || 'Request access'; }
+      if(btn){ btn.disabled = false; btn.textContent = oldText || 'Buy — $4.99'; }
     }
   }
 

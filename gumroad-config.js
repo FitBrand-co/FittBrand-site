@@ -1,9 +1,8 @@
-/* FitBrand v37 Gumroad config
-   Replace the URL below with your real Gumroad product link when you have created it.
-   Example: https://yourname.gumroad.com/l/fitbrand-starter-access
-*/
-window.FITBRAND_GUMROAD = {
-  starterAccessUrl: "https://gumroad.com/",
-  productName: "FitBrand Starter Access",
-  productPrice: "€4.99"
+/* FitBrand Gumroad configuration v43
+   Paste your real Gumroad product URL below after publishing your product. */
+window.FITBRAND_GUMROAD_CONFIG = {
+  starterAccessUrl: "PASTE_YOUR_GUMROAD_PRODUCT_LINK_HERE",
+  priceLabel: "$4.99",
+  productName: "FitBrand Starter Plan",
+  supportEmail: "support@fitbrand.fit"
 };

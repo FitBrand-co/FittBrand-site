@@ -66,6 +66,9 @@ function loadProfile(){const u=getFitBrandUser()||{};const map={pfName:u.name,pf
 document.addEventListener('DOMContentLoaded',()=>{updateCartCount();loadProfile();document.getElementById('fullProfileForm').addEventListener('submit',e=>{e.preventDefault();const user={name:pfName.value.trim(),email:pfEmail.value.trim(),phone:pfPhone.value.trim(),address:pfAddress.value.trim(),gender:pfGender.value,age:pfAge.value,weight:pfWeight.value,height:pfHeight.value,level:pfLevel.value,trainingLocation:pfTrainingLocation.value,trainingDays:pfTrainingDays.value,equipment:pfEquipment.value.trim(),allergies:pfAllergies.value.trim(),goal:pfGoal.value};if(!user.name||!user.email){alert('Please add at least name and email.');return;}saveFitBrandUser(user, true); window.location.href='index.html';});});
 </script>
 <script src="fitbrand-conversion.js"></script>
+
+<script src="gumroad-config.js"></script>
+<script src="fitbrand-v43-final-fix.js"></script>
 </body>
 </html>
 

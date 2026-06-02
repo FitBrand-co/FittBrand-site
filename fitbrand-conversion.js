@@ -148,9 +148,9 @@
       const looksLikeBuy = /buy|checkout|subscribe|unlock|start|access|program|plan/i.test(txt + ' ' + href + ' ' + onclick);
       if(isDigital && looksLikeBuy && !href.includes('product-belt') && !href.includes('product-straps') && !href.includes('product-shaker')){
         if(el.tagName === 'A'){
-          el.setAttribute('href','early-access.html');
+          el.setAttribute('href','purchase-access.html?product=starter');
         } else {
-          el.addEventListener('click', ev => { ev.preventDefault(); location.href = 'early-access.html'; });
+          el.addEventListener('click', ev => { ev.preventDefault(); location.href = 'purchase-access.html?product=starter'; });
         }
       }
     });
