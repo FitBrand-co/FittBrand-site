@@ -1,0 +1,5 @@
+FitBrand v46 flow/UI fix
+- Protected navbar from CTA styling
+- Improved program price cards and button spacing
+- Rebuilt admin TEST center behavior
+- Customer purchase remains Gumroad/purchase page only
