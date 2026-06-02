@@ -1,0 +1,25 @@
+FitBrand v45 validation summary
+
+Scope:
+- Cleaned purchase CTAs and pricing presentation.
+- Rebuilt purchase-access flow to be Gumroad-first.
+- Rebuilt admin-test-access as separate TEST page.
+- Removed old v43/v44 script references from HTML to prevent conflicting purchase/free-access behavior.
+- Added v45 script to all HTML pages so old files are overwritten consistently.
+
+Checks run:
+- node -c fitbrand-v45-conversion-final.js
+- node -c fitbrand.js
+- node -c supabase-integration.js
+- node -c api/admin-leads.js
+- node -c api/early-access-leads.js
+- node -c api/admin-purchases.js
+- runtime smoke test of v45 in a stubbed browser environment
+- internal HTML asset/link scan: 0 missing local refs
+- confirmed no HTML pages reference fitbrand-v43-final-fix.js or fitbrand-v44-final-admin-purchase-fix.js
+- confirmed key pages include fitbrand-v45-conversion-final.js
+- checked visible digital buy CTAs point to purchase-access.html, not early-access/admin/free-access pages
+
+Live test still required after Vercel deploy:
+- index/programs/recommended/purchase/admin pages on phone and desktop
+- Gumroad button after real gumroad-config.js link is inserted
